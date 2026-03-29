@@ -68,7 +68,7 @@ for i, sentence in enumerate(sentences, start=1):
     print(f"   \"{sentence}\"")
 
 
-# --- 3) Overall sentiment for the full passage ---
+#Overall sentiment for the full passage
 overall_label, overall_score, overall_pos, overall_neg = predict_sentiment(text, Pos_words, Neg_words)
 
 print("\nOverall Sentiment Output:")
