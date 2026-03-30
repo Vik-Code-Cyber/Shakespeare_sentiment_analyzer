@@ -3,6 +3,7 @@ import string
 import re
 import nltk
 from nltk.tokenize import word_tokenize, sent_tokenize
+nltk.download('punkt')
 nltk.download('punkt_tab')
 
 text = """When, in disgrace with fortune and men's eyes,
@@ -58,7 +59,7 @@ sentences = sent_tokenize(text)
 print("Cleaned Text:\n", cleaned_text)
 
 
-#Sentence-level predictions (examples) ---
+#Sentence-level predictions (examples)
 print("\nSentence-level predictions:")
 sentence_results = []
 for i, sentence in enumerate(sentences, start=1):
@@ -66,6 +67,24 @@ for i, sentence in enumerate(sentences, start=1):
     sentence_results.append((label, score))
     print(f"{i}. {label} (score={score}, +{pos_count}/-{neg_count})")
     print(f"   \"{sentence}\"")
+
+
+#Single-line sentiment analysis: line 1
+line1 = "When, in disgrace with fortune and men's eyes,"
+line_1_label, line_1_score, line_1_pos, line_1_neg = predict_sentiment(line1, Pos_words, Neg_words)
+
+print("\nSelected line sentiment analysis (line 1):")
+print(f"Line: \"{line1}\"")
+print(f"Result: {line_1_label} (score={line_1_score}, +{line_1_pos}/-{line_1_neg})")
+
+
+#Single-line sentiment analysis: line 2
+line2 = "Wishing me like to one more rich in hope,"
+line_2_label, line_2_score, line_2_pos, line_2_neg = predict_sentiment(line2, Pos_words, Neg_words)
+
+print("\nSelected line sentiment analysis (line 2):")
+print(f"Line: \"{line2}\"")
+print(f"Result: {line_2_label} (score={line_2_score}, +{line_2_pos}/-{line_2_neg})")
 
 
 #Overall sentiment for the full passage
