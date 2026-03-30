@@ -6,6 +6,8 @@ This includes:
 2) Tokenize text/sentences using NLTK.
 3) Use rule-based scoring: +1 for each positive word match, -1 for each negative word match.
 4) Classify sentiment as Positive/Negative/Neutral from final score.
-  #•Difficulties faced and Learnings:
+
+#•Difficulties faced and Learnings:
 1)Learning use of Nltk and re library:
-  #•Use it by pasting code in Any compiler in a .py file.
+
+#•Use it by pasting code in Any compiler in a .py file.
